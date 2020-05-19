@@ -1,11 +1,11 @@
 # TO-DO: Complete the selection_sort() function below
 def selection_sort(arr):
-    # loop through n-1 elements
+    # loop through n-1 elements, and we use n-1 because the value at the end of the array will become the maximum value so there's no need to sort it
     for i in range(0, len(arr) - 1):
         # First, we set two variables, one to track the current index as we move through the array, and one to track the index of the smallest value
         # This allows us to compare the value at the current index with the smallest value 
         cur_index = i
-        smallest_index = cur_index
+        index_of_smallest_value = cur_index
         # TO-DO: find next smallest element
         # (hint, can do in 3 loc)
         # Your code here
@@ -13,12 +13,12 @@ def selection_sort(arr):
         # Here, we write a for loop to go through the rest of the array, starting from the index of the last element to be sorted
         for j in range(cur_index + 1, len(arr)):
             # In each loop, we compare the value at the j index with the smallest value
-            if arr[j] < arr[smallest_index]:
+            if arr[j] < arr[index_of_smallest_value]:
                 # If the value at j is smaller than the value at the smallest index, we set the index of the smallest value to be j, as j represents the index of the smallest value up to this point
-                smallest_index = j
+                index_of_smallest_value = j
         
         # Finally, we swap the value at the current index with the smallest value we found during the loop
-        arr[smallest_index], arr[cur_index] = arr[cur_index], arr[smallest_index]
+        arr[index_of_smallest_value], arr[cur_index] = arr[cur_index], arr[index_of_smallest_value]
 
 
         # TO-DO: swap
